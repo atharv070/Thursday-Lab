@@ -1,0 +1,28 @@
+//Write a program to accept a number from the user and check if a given number is palindrome or not.
+
+import java.util.*;
+public class Main 
+{  
+   public static void main(String[] args) 
+   {  
+       //Scanner class here is used to take value from user
+       Scanner sc = new Scanner(System.in);  
+       System.out.println("Enter the number:");
+       //to store num in orgnum(num is the number to be entered)
+       int num=sc.nextInt();
+       int r,revnum=0;
+       int orgnum=num; 
+       //
+       while(num>0)
+       {    
+       r=num%10;    
+       revnum=(revnum*10)+r;    
+       num=num/10;    
+       }   
+       //nnow check if orgnum and nrevnum are equal or not
+        if(orgnum==revnum)    
+        System.out.println("The entered number "+orgnum+" is a palindrome number ");    
+        else    
+        System.out.println("The entered number "+orgnum+" is not a palindrome");    
+  }  
+} 
