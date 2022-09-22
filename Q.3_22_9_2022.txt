@@ -1,0 +1,172 @@
+// Create a menu for food counter and accept the items from user and display the final Bill amount with the item is ordered
+
+
+import java.util.*;
+//use ArrayList.
+
+public class menuHotelBillArrList {
+
+	public static void main(String[] args) {
+		
+		int menu_item,menu1=0,menu2=0,menu3=0;
+		char ans;
+		int sum = 0;
+		ArrayList<String> starter = new ArrayList<String>();
+		ArrayList<String> maindish = new ArrayList<String>();
+		ArrayList<String> dessert = new ArrayList<String>();
+		ArrayList<Integer> sprice = new ArrayList<Integer>();
+		ArrayList<Integer> mprice = new ArrayList<Integer>();
+		ArrayList<Integer> dprice = new ArrayList<Integer>();
+		List<Integer> total = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		do {
+		    //tmain items in menu
+			System.out.println("Menu:\n:1. Starters \n:2. Main course \n:3. Desserts");
+			menu_item=sc.nextInt();
+			switch (menu_item) 
+			{
+			    //case1 will show all items in starters along with price
+			case 1:
+				System.out.println("1:Paneer Chilli\t\t 120/-");
+				System.out.println("2:Paneer Tikka \t\t 140/-");
+				System.out.println("3:Malai Paneer \t\t 160/-");
+				menu1=sc.nextInt();
+				//goes to starters block
+				switch (menu1) 
+				{
+				    
+				case 1:
+					System.out.println("Paneer Chilli \t\t 120/-");
+					starter.add("Paneer Chilli 120/-");
+					//if chose it would get add in bill 
+					sprice.add(120);
+					
+					break;
+				case 2:
+					System.out.println("Paneer Tikka \t\t 140/-");
+					starter.add("Paneer Tikka 140/-");
+					//if chose it would get add in bill 
+					sprice.add(140);
+					
+					break;
+				case 3:
+					System.out.println("Malai Paneer \t 160/-");
+					starter.add("Malai Paneer 160/-");
+					//if chose it would get add in bill 
+					sprice.add(160);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Valid Option");
+					break;
+				}
+				break;
+				//case2 will show all items in main course along with price
+			case 2:
+				System.out.println("1:Punjabi \t\t 300/-");
+				System.out.println("2:South Indian\t\t 200/-");
+				System.out.println("3:Italian \t\t 500/-");
+				menu2=sc.nextInt();
+				//goes to main course block
+				switch (menu2)
+				{
+				case 1:
+					System.out.println("Punjabi \t\t 300/-");
+					maindish.add("Punjabi 300/-");
+					//if chose it would get add in bill 
+					mprice.add(300);
+					
+					break;
+				case 2:
+					System.out.println("South Indian \t\t\t 200/-");
+					maindish.add("South Indian 200/-");
+					//if chose it would get add in bill 
+					mprice.add(200);
+					
+					break;
+				case 3:
+					System.out.println("Italian \t\t 500/-");
+					maindish.add("Italian 500/-");
+					//if chose it would get add in bill 
+					mprice.add(500);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Valid Option");
+					break;
+				}
+				
+				break;
+				
+				//case3 will show all items in desserts along with price
+				
+			case 3:
+				System.out.println("1:Vanilla \t\t 100Rs");
+				System.out.println("2:Strawberry \t\t 200Rs");
+				System.out.println("3:Chocolate \t\t 300Rs");
+				menu3=sc.nextInt();
+				switch (menu3)
+				{
+				case 1:
+					System.out.println("Vanilla \t\t\t 100/-");
+					dessert.add("Vanilla 100/-");
+					//if chose it would get add in bill 
+					dprice.add(120);
+					
+					break;
+				case 2:
+					System.out.println("Strawberry \t\t 200/-");
+					dessert.add("Strawberry 200/-");
+					//if chose it would get add in bill 
+					dprice.add(200);
+					
+					break;
+				case 3:
+					System.out.println("Chocolate \t\t 300/-");
+					dessert.add("Chocolate 300/-");
+					//if chose it would get add in bill 
+					dprice.add(300);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Valid Option");
+					break;
+				}
+				
+				break;
+
+			default:
+				break;
+			}
+			System.out.println("Would you like to order more? y/n");
+			ans=sc.next().charAt(0);
+		}
+		while(ans=='Y' || ans=='y');
+		
+		
+		total.addAll(sprice);
+		total.addAll(mprice);
+		total.addAll(dprice);
+		for (int i=0;i<total.size();i++)
+		{
+		    //to add total bill
+			sum += total.get(i);
+		}
+		System.out.println("Your Starter Dish");
+		System.out.println(starter);
+		System.out.println("Your Main Dish");
+		System.out.println(maindish);
+		System.out.println("Your Dessert Dish");
+		System.out.println(dessert);
+		
+		
+		System.out.println("Your Total Bill is : "+sum);
+		
+		System.out.println("VISIT AGAIN!");
+
+	}
+
+}
