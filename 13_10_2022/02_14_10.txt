@@ -1,0 +1,64 @@
+//*WAP to create a class Reverse No, second class SOD , Third class use both the class 
+property and display the output*/
+
+package Thursday;
+
+import java.util.Scanner;
+
+public class Reverse_no {
+	static Scanner sc = new Scanner(System.in);
+
+	public static void rev() {
+		int number, reverse = 0;
+		System.out.println("Enter the number: "); 
+	//to get the number from user
+		number = sc.nextInt();                    
+	//this uses in this block of body
+		while (number != 0) {
+			int remainder = number % 10;      
+	//to find the last digit of the given number
+			reverse = reverse * 10 + remainder; 
+	//rev store the reverse number
+			number = number / 10;             
+	//to remove the last digit from the number  
+		}
+		System.out.println("The reverse of the given number is: " + reverse);   
+	//to print output
+	}
+}
+
+package Thursday;
+
+public class SOD extends Reverse_no {
+	public static void sod() {
+		int number, digit, sum = 0;
+		System.out.print("Enter the number: ");
+		number = sc.nextInt();
+		while (number > 0) {
+
+			digit = number % 10; 
+	//to findthe last digit of the given number
+
+			sum = sum + digit; 
+	//to add last digit to the variable sum
+
+			number = number / 10; 
+	//to remove the last digit from the number
+		}
+
+		System.out.println("Sum of Digits: " + sum); 
+	//to print output
+	}
+}
+
+package Thursday;
+
+public class Third extends SOD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		rev();
+		sod();
+	}
+
+}
